@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidationModelAPI", "ValidationModelAPI.csproj", "{DA96A1C9-6062-4ECB-806C-2C5FC61908EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleValuationModel", "..\..\ConsoleValuationModel\ConsoleValuationModel.csproj", "{831F3AFA-1E42-4CE7-9E0A-5967D29773B0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA96A1C9-6062-4ECB-806C-2C5FC61908EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA96A1C9-6062-4ECB-806C-2C5FC61908EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA96A1C9-6062-4ECB-806C-2C5FC61908EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA96A1C9-6062-4ECB-806C-2C5FC61908EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{831F3AFA-1E42-4CE7-9E0A-5967D29773B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{831F3AFA-1E42-4CE7-9E0A-5967D29773B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{831F3AFA-1E42-4CE7-9E0A-5967D29773B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{831F3AFA-1E42-4CE7-9E0A-5967D29773B0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {42FB8A75-2CC5-4980-9233-E0A2023AA03B}
+	EndGlobalSection
+EndGlobal
