@@ -10,7 +10,15 @@ Using a GET request will yeild the full database of vessles with their valuation
 cached, then a new ones for the years 2020, 2021, 2022 are calculated.  
 
 # Additional extentions
-Many improv
+Many improvements can me made to the rest api such as:
+- separating out the /valuations request to different routes
+- Adding more entry points that call the available functions in ValueationProcessor.cs  
+
+This could also be extended to a mirco-service archetecture. Firstly, the ASP api code will be its own separate service to
+the ValuationModel code. The former will not need the latter as a project dependancy. Instead, the api would push a request object
+onto a message broker queue (for example using rabbitMQ). The ValuationModel would then be extended to allow it to subscribe to this 
+message queue, and digest these requests. On completion, these requests can be sent back to the api via a different queue to be presented
+to the end user. 
 
 
 
