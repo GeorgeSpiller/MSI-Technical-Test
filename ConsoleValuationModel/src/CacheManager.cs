@@ -14,23 +14,38 @@ public class CacheManager
     
     public void AddCache(string key, dynamic data) 
     {
-        // Tuple<DateTime, dynamic> cacheObj = new(datetime.now, data);
-        // _cache[key] = cacheObj; 
-        throw new NotImplementedException();
+        DateTime dt = DateTime.Now;
+        Tuple<DateTime, dynamic> cacheObj = new(dt, data);
+        _cache[key] = cacheObj; 
     }
 
     public dynamic? ReadCache(string key) 
     {
-        // Tuple<DateTime, dynamic> cacheObj = _cache[key];
-        // remove if reached end-of-life (cacheLifetime)
-        // ret cacheObj
-        throw new NotImplementedException();
+        if (!_cache.ContainsKey(key)) 
+        {
+            Console.WriteLine("No cache Hit.");
+            return null;
+        }
+
+        Console.WriteLine("Cache Hit.");
+        Tuple<DateTime, dynamic> cacheObj = _cache[key];
+        if (cacheObj.Item1 + cacheLifetime < DateTime.Now) 
+        {
+            return cacheObj.Item2;
+        } else 
+        {
+            _cache.Remove(key);
+        }
+        return null;
     }
 
-     public string GetHashAsString(string inp) 
+    public string GetHashAsString(string inp) 
     {
-        // hash the string, used as key in cache dict
-        throw new NotImplementedException();
+        byte[] tmpSource;
+        byte[] tmpHash;
+        tmpSource = ASCIIEncoding.UTF8.GetBytes(inp);
+        tmpHash = MD5.HashData(tmpSource);
+        return ASCIIEncoding.UTF8.GetString(tmpHash) ?? "";
     }
 
 }
