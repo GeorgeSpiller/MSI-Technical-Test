@@ -14,12 +14,36 @@ public class ValuationProcessor
         DB = db;
         cache = new CacheManager();
     }
-
-    public void CalcFairMarketValue(List<uint> IMO_List, List<int> ValuationYears) 
+    
+    public List<Vessel> GetAllValuations(List<int> ValuationYears) 
     {
+        List<Vessel> allData = DB.ReadAll();
+        // get all valuations, maybe store evaluation list for each ear in the vessel object?
         throw new NotImplementedException();
     }
-    
+
+    public Dictionary<uint, Dictionary<int, double>> CalcFairMarketValue(List<uint> IMO_List, List<int> ValuationYears) 
+    {
+        // sort Valuation years, so that the hash for the same list of years is the same (used when caching)
+        ValuationYears.Sort();
+        Dictionary<uint, Dictionary<int, double>>  IMOReturn = new();
+        Dictionary<int, double> valResults = new();
+        foreach (uint imo in IMO_List) 
+        {
+            // if not then calucuate the FMV
+            foreach (int year in ValuationYears)
+            {
+                double result = CalcFairMarketValue(imo, year);
+                valResults[year] = result;
+            }
+            // shallow coppy valResults to the return dict
+            IMOReturn[imo] = valResults.ToDictionary(entry => entry.Key, entry => entry.Value);
+
+            valResults.Clear();
+        }
+        return IMOReturn;
+    }
+
     public double CalcFairMarketValue(uint IMO, int year) 
     {
         /*
