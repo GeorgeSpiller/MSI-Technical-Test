@@ -8,12 +8,18 @@ public class CacheManager
 {
     private Dictionary<string, Tuple<DateTime, dynamic>> _cache = new();
     private readonly TimeSpan cacheLifetime = new(0, 0, 2); // 0h, 1m, 0s
+    public bool Freeze = false;
+
     public CacheManager()
     {
     }
     
     public void AddCache(string key, dynamic data) 
     {
+        if (Freeze) 
+        {
+            throw new Exception("Attempting to add to cache while cache is frozen");
+        }
         DateTime dt = DateTime.Now;
         Tuple<DateTime, dynamic> cacheObj = new(dt, data);
         _cache[key] = cacheObj; 
@@ -34,7 +40,10 @@ public class CacheManager
             return cacheObj.Item2;
         } else 
         {
-            _cache.Remove(key);
+            if (!Freeze) 
+            {
+                _cache.Remove(key);
+            }
         }
         return null;
     }
@@ -45,7 +54,8 @@ public class CacheManager
         byte[] tmpHash;
         tmpSource = ASCIIEncoding.UTF8.GetBytes(inp);
         tmpHash = MD5.HashData(tmpSource);
-        return ASCIIEncoding.UTF8.GetString(tmpHash) ?? "";
+        // return ASCIIEncoding.UTF8.GetString(tmpHash) ?? "";
+        return BitConverter.ToString(tmpHash).Replace("-", string.Empty);
     }
 
 }

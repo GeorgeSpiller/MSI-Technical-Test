@@ -18,22 +18,31 @@ public class Vessel
     public VesselType vesselType;
     
     public uint YearOfBuild;
+    private Dictionary<int, double> Valuations = new();
     private uint _Size;
 
     public Vessel(uint IMO, VesselType vesselType, uint YearOfBuild, uint Size)
     {
-        // TODO: Maybe have object to store vessel type sizes (or store these in config file) rather than hard coding them
         this.IMO = IMO;
         this.vesselType = vesselType;
         this.YearOfBuild = YearOfBuild;
         _Size = this.Size = Size;
     }
 
-    public override string ToString()
+    public void AddValuadtion(int year, double val) 
     {
-        return $"Vessel[{this.vesselType}, Size: {this.Size}]";
+        Valuations[year] = val;
     }
 
+    public Dictionary<int, double> GetValuations() 
+    {
+        return Valuations;
+    }
+
+    public override string ToString()
+    {
+        return $"Vessel[{this.vesselType}, Size: {this.Size}, Contains Evaluations: {Valuations.Count != 0}]";
+    }
     private uint SetSize(uint inpSize) 
     {
         string ExReason = string.Empty;
@@ -67,8 +76,6 @@ public class Vessel
             default:
                 break;
         }
-        throw new Exception($"Vessel Size not correct for its type {this.vesselType} {ExReason}");
+        throw new Exception($"Muse define vessel type before setting vessel size. {ExReason}");
     }
 }
-
-

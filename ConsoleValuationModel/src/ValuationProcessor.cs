@@ -1,8 +1,7 @@
-
 namespace ValuationModel;
-
-public class ValuationProcessor
+public class ValuationProcessor 
 {
+
     private const double A = 0.001;
     private const int B = -1;
     private const int Constant = 0;
@@ -11,14 +10,26 @@ public class ValuationProcessor
     public ValuationProcessor(DbMock db)
     {
         DB = db;
+
+        // enable cache
         cache = new CacheManager();
     }
-    
+
     public List<Vessel> GetAllValuations(List<int> ValuationYears) 
     {
         List<Vessel> allData = DB.ReadAll();
-        // get all valuations, maybe store evaluation list for each ear in the vessel object?
-        throw new NotImplementedException();
+        foreach(Vessel v in allData) 
+        {
+            Dictionary<uint, Dictionary<int, double>> _ = CalcFairMarketValue(new List<uint>() {v.IMO}, ValuationYears);
+            Dictionary<int, double> evals = v.GetValuations();
+            Console.Write($"{v}");
+            foreach(int k in evals.Keys) 
+            {
+                Console.Write($"({k} : {evals[k]}) ");
+            }
+            Console.WriteLine();
+        }
+        return allData;
     }
 
     public Dictionary<uint, Dictionary<int, double>> CalcFairMarketValue(List<uint> IMO_List, List<int> ValuationYears) 
@@ -43,6 +54,7 @@ public class ValuationProcessor
         return IMOReturn;
     }
 
+
     public double CalcFairMarketValue(uint IMO, int year) 
     {
         /*
@@ -62,10 +74,18 @@ public class ValuationProcessor
         }
 
         // calculate the FMV for that year
-        double FMV = A * v.Size + B * (year - v.YearOfBuild) + Constant;
-
-        return FMV;
-        
+        // first, check the cache to see if its previsouly been calculated 
+        string cacheKey = cache.GetHashAsString($"{A}{v.Size}{B}{year - v.YearOfBuild}{Constant}");
+        var cachRead = cache.ReadCache(cacheKey);
+        if (cachRead != null) 
+        {
+            return (double)cachRead;
+        } else 
+        {
+            double FMV = A * v.Size + B * (year - v.YearOfBuild) + Constant;
+            cache.AddCache(cacheKey, FMV);
+            v.AddValuadtion(year, FMV);
+            return FMV;
+        }
     }
-    
 }

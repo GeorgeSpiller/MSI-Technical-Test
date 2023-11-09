@@ -6,7 +6,6 @@ public class DbMock
     private List<Vessel> _DB = new();
     public DbMock()
     {
-        // implements DB CRUD methods. Defines static objects to use as a mock DB.
         Vessel svm_db1 = new(0, Vessel.VesselType.DRY_BULK, 2015, 25000);
         Vessel svm_db2 = new(1, Vessel.VesselType.DRY_BULK, 2015, 25000);
         Vessel svm_db3 = new(2, Vessel.VesselType.DRY_BULK, 2015, 25000);
@@ -64,5 +63,4 @@ public class DbMock
     {
         return _DB;
     }
-
 }
