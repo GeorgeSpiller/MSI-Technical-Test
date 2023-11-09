@@ -1,0 +1,14 @@
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\bin\Debug\net7.0\ConsoleValuationModel.exe
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\bin\Debug\net7.0\ConsoleValuationModel.deps.json
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\bin\Debug\net7.0\ConsoleValuationModel.runtimeconfig.json
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\bin\Debug\net7.0\ConsoleValuationModel.dll
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\bin\Debug\net7.0\ConsoleValuationModel.pdb
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.AssemblyInfoInputs.cache
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.AssemblyInfo.cs
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.csproj.CoreCompileInputs.cache
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.dll
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\refint\ConsoleValuationModel.dll
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.pdb
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ConsoleValuationModel.genruntimeconfig.cache
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ConsoleValuationModel\obj\Debug\net7.0\ref\ConsoleValuationModel.dll
