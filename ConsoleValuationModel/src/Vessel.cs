@@ -3,7 +3,7 @@ namespace ValuationModel;
 
 public class Vessel
 {
-    public enum VesselType
+    public enum VesselTypeEnum
     {
         DRY_BULK,
         OIL_TANKER,
@@ -15,13 +15,13 @@ public class Vessel
     }
 
     public uint IMO;
-    public VesselType vesselType;
+    public VesselTypeEnum vesselType;
     
     public uint YearOfBuild;
     private Dictionary<int, double> Valuations = new();
     private uint _Size;
 
-    public Vessel(uint IMO, VesselType vesselType, uint YearOfBuild, uint Size)
+    public Vessel(uint IMO, VesselTypeEnum vesselType, uint YearOfBuild, uint Size)
     {
         this.IMO = IMO;
         this.vesselType = vesselType;
@@ -48,15 +48,15 @@ public class Vessel
         string ExReason = string.Empty;
         switch(vesselType) 
         {
-            case VesselType.DRY_BULK: // Dry Bulk: 25000-125000, 
+            case VesselTypeEnum.DRY_BULK: // Dry Bulk: 25000-125000, 
                 if (inpSize >= 25000 && inpSize <= 125000) {return inpSize;}
                 ExReason = "Dry Bulk: 25000-125000"; 
                 break;
-            case VesselType.OIL_TANKER: // Oil Tanker: 35000-75000
+            case VesselTypeEnum.OIL_TANKER: // Oil Tanker: 35000-75000
                 if (inpSize >= 35000 && inpSize <= 75000) {return inpSize;}
                 ExReason = "Oil Tanker: 35000-75000"; 
                 break;
-            case VesselType.CONTAINER_SHIP: // Containership: 20000-45000 If year of build is smaller than 2018, otherwise 20000-55000
+            case VesselTypeEnum.CONTAINER_SHIP: // Containership: 20000-45000 If year of build is smaller than 2018, otherwise 20000-55000
                 if (this.YearOfBuild < 2018) 
                 {
                     if (inpSize >= 20000 && inpSize <= 45000) 

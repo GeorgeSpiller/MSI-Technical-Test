@@ -107,6 +107,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "ConsoleValuationModel/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/ConsoleValuationModel.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ConsoleValuationModel.dll": {}
+        }
       }
     }
   },
@@ -460,10 +470,16 @@
         "swashbuckle.aspnetcore.swaggerui.6.5.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
       ]
+    },
+    "ConsoleValuationModel/1.0.0": {
+      "type": "project",
+      "path": "../../ConsoleValuationModel/ConsoleValuationModel.csproj",
+      "msbuildProject": "../../ConsoleValuationModel/ConsoleValuationModel.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
+      "ConsoleValuationModel >= 1.0.0",
       "Microsoft.AspNetCore.OpenApi >= 7.0.13",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -492,7 +508,11 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\geosp\\Documents\\Projects\\Code\\MSI\\Technical Test\\ConsoleValuationModel\\ConsoleValuationModel.csproj": {
+              "projectPath": "C:\\Users\\geosp\\Documents\\Projects\\Code\\MSI\\Technical Test\\ConsoleValuationModel\\ConsoleValuationModel.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

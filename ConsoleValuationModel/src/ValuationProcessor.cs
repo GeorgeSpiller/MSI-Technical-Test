@@ -22,12 +22,12 @@ public class ValuationProcessor
         {
             Dictionary<uint, Dictionary<int, double>> _ = CalcFairMarketValue(new List<uint>() {v.IMO}, ValuationYears);
             Dictionary<int, double> evals = v.GetValuations();
-            Console.Write($"{v}");
-            foreach(int k in evals.Keys) 
-            {
-                Console.Write($"({k} : {evals[k]}) ");
-            }
-            Console.WriteLine();
+            // Console.Write($"{v}");
+            // foreach(int k in evals.Keys) 
+            // {
+            //     Console.Write($"({k} : {evals[k]}) ");
+            // }
+            // Console.WriteLine();
         }
         return allData;
     }
@@ -43,7 +43,7 @@ public class ValuationProcessor
             // if not then calucuate the FMV
             foreach (int year in ValuationYears)
             {
-                double result = CalcFairMarketValue(imo, year);
+                double result = CalcSingleFairMarketValue(imo, year);
                 valResults[year] = result;
             }
             // shallow coppy valResults to the return dict
@@ -55,7 +55,7 @@ public class ValuationProcessor
     }
 
 
-    public double CalcFairMarketValue(uint IMO, int year) 
+    public double CalcSingleFairMarketValue(uint IMO, int year) 
     {
         /*
         The calculation logic for the timeseries is a linear parametric equation of the format:

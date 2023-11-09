@@ -29,11 +29,9 @@ public class CacheManager
     {
         if (!_cache.ContainsKey(key)) 
         {
-            Console.WriteLine("No cache Hit.");
             return null;
         }
 
-        Console.WriteLine("Cache Hit.");
         Tuple<DateTime, dynamic> cacheObj = _cache[key];
         if (cacheObj.Item1 + cacheLifetime < DateTime.Now) 
         {

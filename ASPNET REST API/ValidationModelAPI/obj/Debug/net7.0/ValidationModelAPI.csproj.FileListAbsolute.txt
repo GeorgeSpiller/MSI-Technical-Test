@@ -31,3 +31,8 @@ C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\Valida
 C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\obj\Debug\net7.0\ValidationModelAPI.pdb
 C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\obj\Debug\net7.0\ValidationModelAPI.genruntimeconfig.cache
 C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\obj\Debug\net7.0\ref\ValidationModelAPI.dll
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\bin\Debug\net7.0\ConsoleValuationModel.deps.json
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\bin\Debug\net7.0\ConsoleValuationModel.runtimeconfig.json
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\bin\Debug\net7.0\ConsoleValuationModel.exe
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\bin\Debug\net7.0\ConsoleValuationModel.dll
+C:\Users\geosp\Documents\Projects\Code\MSI\Technical Test\ASPNET REST API\ValidationModelAPI\bin\Debug\net7.0\ConsoleValuationModel.pdb
