@@ -4,8 +4,8 @@ using ValuationModel;
 DbMock DB = new DbMock();
 ValuationProcessor FMV = new(DB);
 
-List<uint> IMOsToEvaluate = new List<uint> {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
-List<int> YearsToEaluate = new List<int> {2020, 2021, 2022};
+List<uint> IMOsToEvaluate = new() { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
+List<int> YearsToEaluate = new() { 2021, 2020, 2022}; // out of order to test sort when caching
 
 Dictionary<uint, Dictionary<int, double>> res = FMV.CalcFairMarketValue(IMOsToEvaluate, YearsToEaluate);
 
@@ -19,4 +19,3 @@ foreach (uint k in IMOsToEvaluate)
     }
     Console.WriteLine();
 }
-Console.WriteLine($"{FMV.CalcFairMarketValue(IMOsToEvaluate, YearsToEaluate)}");

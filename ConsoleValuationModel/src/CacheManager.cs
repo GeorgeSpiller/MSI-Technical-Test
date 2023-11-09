@@ -27,4 +27,10 @@ public class CacheManager
         throw new NotImplementedException();
     }
 
+     public string GetHashAsString(string inp) 
+    {
+        // hash the string, used as key in cache dict
+        throw new NotImplementedException();
+    }
+
 }

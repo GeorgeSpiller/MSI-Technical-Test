@@ -22,6 +22,7 @@ public class Vessel
 
     public Vessel(uint IMO, VesselType vesselType, uint YearOfBuild, uint Size)
     {
+        // TODO: Maybe have object to store vessel type sizes (or store these in config file) rather than hard coding them
         this.IMO = IMO;
         this.vesselType = vesselType;
         this.YearOfBuild = YearOfBuild;

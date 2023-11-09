@@ -3,7 +3,6 @@ namespace ValuationModel;
 
 public class ValuationProcessor
 {
-
     private const double A = 0.001;
     private const int B = -1;
     private const int Constant = 0;
